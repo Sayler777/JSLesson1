@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        'use strict'
+
+        // Задание 1
+        /**
+        * Функция проверят правильность ввода данных пользователя и возвращает их.  Если данные неверные, появляется окно с информацией и занова запускается функция start(), 
+            а если данные верные, то в переменную UserNumber возвращается объект со свойствами.
+        * @return {object} В переменной UserNumber создается объект и прописываются свойства
+        */
+        function startUserNumbers(){
+            if ((UserNumber > 999) || (UserNumber < 0) || (isNaN(UserNumber)) || (!Number.isInteger(UserNumber)) ) {
+                alert("Данные введены неправильно!");
+                start()
+            } else {              
+                return UserNumber = {
+                    Units: UserNumber % 10,
+                    Tens: Math.floor(UserNumber / 10) % 10,
+                    Hundereds: Math.floor(UserNumber / 100)
+                }
+            }
+            
+        }
+
+    /**
+     * Функция запускает программу и спрашивает у пользователя число от 0 до 999.
+     * @param {number} UserNumber Число от 0 до 999
+     * @return {object} передает значение в другую функцию
+    */
+        function start(){
+            UserNumber = +prompt("Введите число от 0 до 999");
+            return startUserNumbers(UserNumber);
+        }
+
+        let UserNumber;
+        start(UserNumber);
+        console.log(UserNumber);
+
+
+        //Задание 1.1
+        // ES5
+        function Product(){
+            this.name = "Car";
+            this.price = 100;
+            
+            }
+
+        Product.prototype.make25PercentDiscount = function(){
+                this.price = this.price * 0.75;
+        }
+
+       let product = new Product();
+       
+       console.log(product);
+       product.make25PercentDiscount();
+       console.log(product);
+
+       //ES6
+
+        class Product2 {
+            constructor (name, price){
+                this.name = "Car2";
+                this.price = 200;
+            }
+        
+            make25PercentDiscount2() {
+                this.price = this.price * 0.75;
+            }
+        }
+
+       let product2 = new Product2 ();
+
+       console.log(product2);
+       product2.make25PercentDiscount2();
+       console.log(product2);
+
+       //Задание 1.2 a
+       //ES5
+       function Post(){
+            this.author  = "Name";
+            this.text = "";
+            this.date = "14/04/2020" ;
+            
+            }
+
+        Post.prototype.edit = function(){
+                let textUser = prompt("Введите текст");
+                this.text += textUser;
+        }
+
+       let post = new Post();
+       console.log(post);
+       post.edit();
+       console.log(post);
+
+        //ES6
+        class Post2{
+            constructor (author, text, date){
+                this.author  = "Name";
+                this.text = "";
+                this.date = "14/04/2020" ;
+            }        
+
+            edit2(){
+                let textUser = prompt("Введите текст");
+                this.text += textUser;
+            }
+        }
+
+        let post2 = new Post2 ();
+        post2.edit2();
+        console.log(post2);
+
+        //Задание 1.2 б
+        function AttachedPost(){
+            Post.call(this);
+            this.highlighted = false;
+        }
+        
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function(){
+            this.highlighted = true;
+            console.log(attachedPost);
+        }
+        let attachedPost = new AttachedPost();
+        attachedPost.edit();
+        console.log(attachedPost);
+        attachedPost.makeTextHighlighted();
+
+    </script>
+    
+</body>
+</html>

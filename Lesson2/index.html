@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        /*
+        //Задание 1
+        var a = 1, b = 1, c, d; 
+        // c = ++a; alert(c);           // 2 ; Инкремент префиксной формы, сначала а увеличился на 1, т.е. а = 2, потом с = 2  
+        d = b++; alert(d);           // 1 ; Инкремент постфиксной формы сначала d присвоило значение b, т.е. d = 1, потом b увеличилось на 1
+        c = (2+ ++a); alert(c);      // 5 ; ++a = 2+1, соответсвенно с = (2+3) 
+        d = (2+ b++); alert(d);      // 4 ; b++ прибавит на 1 после исполнения выражения, т.е. d = (2+2) = 4, потом значение b прибавляется на 1 
+        alert(a);                    // 3 ; значение a прибавлялось на 1 два раза 
+        alert(b);                    // 3 ; значение b прибавлялось на 1 два раза 
+
+        // Задание 2
+        var a = 2;
+        var x = 1 + (a *= 2);
+        console.log(x) // x = 5, приоритет *
+
+       
+
+        // Задание 3
+
+        let a = +prompt ("Введите любое число для a");
+        let b = +prompt ("Введите любое число для b");
+
+        if(a>= 0 && b >= 0){
+            let c = a - b
+            alert(c)
+        } else if (a < 0 && b < 0){
+            let c = a * b
+            alert(c)
+        } else if ((a >= 0 && b < 0) ||  (a < 0 && b >=0)){
+            let c = a + b
+            alert(c)
+        }
+            */ 
+         
+        // Задание 4
+
+        /**
+        * Функция складывает значение a и b
+        * @param {number} a Первое число, которое складывается в фунцкии
+        * @param {number} b Второе число, которое складывается в фунцкии
+        * @param {number} solution1 Значение сложения двух чисел a и b
+        * @return {number} Возвращает значение
+        */  
+        function saySolution1(a,b){
+            let solution1 = a + b
+            return solution1
+        }
+
+        /**
+        * Функция вычитает значение a и b
+        * @param {number} a Первое число, которое вычитается в фунцкии
+        * @param {number} b Второе число, которое вычитается в фунцкии
+        * @param {number} solution2  Значение вычитания двух чисел a и b
+        * @return {number} Возвращает значение
+        */  
+        function saySolution2(a,b){
+            let solution2 = a - b 
+            return solution2
+        }
+
+        /**
+        * Функция делит значение a и b
+        * @param {number} a Первое число, которое делится в фунцкии
+        * @param {number} b Второе число, которое делится в фунцкии
+        * @param {number} solution3 Значение деления двух чисел a и b
+        * @return {number} Возвращает значение
+        */  
+        function saySolution3(a,b){
+            let solution3 = a / b
+            return solution3 
+        }
+
+        /**
+        * Функция умножает значение a и b
+        * @param {number} a Первое число, которое умножается в фунцкии
+        * @param {number} b Второе число, которое умножается в фунцкии
+        * @param {number} solution4 Значение умножение двух чисел a и b
+        * @return {number} Возвращает значение
+        */ 
+        function saySolution4(a,b){
+            let solution4 = a * b
+            return solution4  
+        }
+        
+        let a = +prompt ("Введите любое число для a");
+        let b = +prompt ("Введите любое число для b");
+
+        console.log(`Сумма двух чисел: ${saySolution1(a,b)}`)
+        console.log(`Вычитание двух чисел: ${saySolution2(a,b)}`)
+        console.log(`Деление двух чисел: ${saySolution3(a,b)}`)
+        console.log(`Умножение двух чисел: ${saySolution4(a,b)}`)
+      
+        
+
+        // Задание 5
+        /**
+         * Функция совершает математическую операцию.
+         * @param {number} arg1 Первое заданное число
+         * @param {number} arg2 Второе заданное число
+         * @param {number} operation Знак математического выражения, может быть "+","-","/","*"
+         * @return {number} Возвращает значение
+        */ 
+        function mathOperation(arg1, arg2, operation){
+            switch (operation){
+                case "+":
+                    return saySolution1(arg1, arg2);
+                case "-":
+                    return saySolution2(arg1, arg2);
+                case "/":
+                    return saySolution3(arg1, arg2);
+                case "*":
+                    return saySolution4(arg1, arg2);
+            }
+        }
+
+        console.log(mathOperation(2,4,"+"))
+        console.log(mathOperation(2,4,"-"))
+        console.log(mathOperation(2,4,"/"))
+        console.log(mathOperation(2,4,"*"))
+
+        /*
+        5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от 
+        переданного значения операции (использовать switch) выполнить одну из арифметических операций 
+        (использовать функции из задания 4) и вернуть полученное значение. 
+ 
+        */
+
+
+    </script>
+</body>
+</html>
